@@ -74,6 +74,18 @@ export default function Home() {
       status: 'متاح',
       external: true,
     },
+    {
+      id: 'islamic-basics',
+      title: 'أساسيات الإسلام',
+      description: 'التوحيد والعقيدة، كيفية الوضوء والصلاة، أركان الإسلام والإيمان',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+      ),
+      href: '/islamic-basics',
+      status: 'متاح',
+    },
   ];
 
   return (
@@ -110,11 +122,12 @@ export default function Home() {
         <header className="p-4 sm:p-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
-              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-green-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61z" />
+              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2c0 0-1 2-1 4s1 3 1 3 1-1 1-3-1-4-1-4zM9 9l-1 1v2h8v-2l-1-1H9zM8 12v10h8V12H8zm3 2h2v2h-2v-2zm-2 4h6v2H9v-2z" />
               </svg>
             </div>
             <span className="text-white font-bold text-lg sm:text-xl">المنارة الإسلامية</span>
+            <span className="text-lg sm:text-xl">🇵🇸</span>
           </div>
         </header>
 
@@ -159,7 +172,7 @@ export default function Home() {
           </div>
 
           {/* Feature Cards */}
-          <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-20">
+          <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-20">
             {features.map((feature) => (
               <div key={feature.id} className="group">
                 {feature.href === '#' ? (
