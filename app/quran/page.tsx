@@ -341,6 +341,20 @@ export default function Home() {
     };
   }, [stopAudio]);
 
+  useEffect(() => {
+    if (pages.length === 0 || !allAyahs.length) return;
+    const page = pages[currentPageIndex];
+    if (!page) return;
+    const startAyahIdx = allAyahs.findIndex(a => a.verse_number === page.startAyah);
+    if (startAyahIdx === -1) return;
+
+    if (isPlaying) {
+      playAyah(startAyahIdx);
+    } else {
+      setCurrentAyahIndex(startAyahIdx);
+    }
+  }, [currentPageIndex]);
+
   const getAccentColor = (scheme: ColorScheme) => {
     const colors: Record<ColorScheme, string> = {
       green: '#22c55e',
