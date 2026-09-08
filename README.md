@@ -59,6 +59,3 @@ npm run build
 firebase deploy
 ```
 
-## 📄 الترخيص
-
-MIT
